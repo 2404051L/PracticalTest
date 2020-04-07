@@ -1,0 +1,17 @@
+<header>
+    <h1> Latest News</h1>
+</header>
+
+{% if latest_story_list %}
+    <ul style="list-style-type:none;">
+    {% for story in latest_story_list %}
+        <li>
+            <h2>{{ story.story_title }}</h2>
+            <p>{{ story.published_date }}</p>
+            <p>{{ story.story_text }}</p>
+        </li>
+    {% endfor %}
+    </ul>
+{% else %}
+    <p>No stories are available.</p>
+{% endif %}
